@@ -18,7 +18,8 @@ module Wordgen
             break
         end
       end
-      myWord
+      key = myWord.split("")
+      key
     end
 end
 
