@@ -1,8 +1,7 @@
-
-require_relative "game.rb"
-require_relative "display.rb"
-require_relative "logic.rb"
-require_relative "wordgen.rb"
-require_relative "saveload.rb"
+require_relative 'game'
+require_relative 'display'
+require_relative 'logic'
+require_relative 'wordgen'
+require_relative 'saveload'
 
 Game.new.play
