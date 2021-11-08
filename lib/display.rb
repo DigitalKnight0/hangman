@@ -10,7 +10,7 @@ module Display
         input = 0
         loop do 
         input = gets.chomp.to_i
-        if input.between?(1..2)
+        if input.between?(1,2)
             break
         else
             puts "You have entered an invalid number, please try again!"
@@ -19,11 +19,11 @@ module Display
     input
     end
 
-    def ingame(arr , choices)
+    def ingame(grid , choices)
       input = ""  
-      puts "The current grid is below"
-      print arr.join(",")
-      puts "You have #{choices} left"
+      puts "\nThe current grid is below"
+      print grid.join(",")
+      puts "\nYou have #{choices} choices left"
       puts "Enter a Letter to test"
       loop do
       input = gets.chomp.to_s 
@@ -33,16 +33,18 @@ module Display
         puts "Invalid choice, please try again"
       end
       end
-    input
+    input.downcase
     end
 
-    def wrong
-        puts "You have entered a wrong choice"
+
+    def save_ask
+      puts "Press 1 to save"
+      puts "Press any other key to continue"
+      choose = gets.chomp.to_i
+      choose
     end
 
-    def correct
-        puts "you have entered a right choice!"
-    end
+   
 end
 
     

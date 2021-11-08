@@ -9,8 +9,8 @@ module Wordgen
 
     def gen_word
       myWord = ""
+      list = get_list
       loop do
-        list = get_list
         random_id = rand(0..list.size)
         myWord = list[random_id]
         if myWord.length > 3
@@ -18,8 +18,10 @@ module Wordgen
             break
         end
       end
-      key = myWord.split("")
-      key
+      fix = myWord.chomp.chomp
+      key = fix.split("")
+      key.each {|x| x.downcase!}
+      
     end
 end
 
